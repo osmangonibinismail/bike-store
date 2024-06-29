@@ -8,7 +8,7 @@ import { ScrollArea } from "./ui/scroll-area";
 const CartSidebar = () => {
   const { cartCount, cartDetails, shouldDisplayCart, handleCartClick, totalPrice, } = useShoppingCart();
   return (
-    <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
+    <Sheet open={true} onOpenChange={() => handleCartClick()}>
       <SheetContent>
         <SheetHeader>
           <SheetTitle className='text-left mb-12'>
