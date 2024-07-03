@@ -8,7 +8,6 @@ import Link from 'next/link';
 import { CgEye, CgShoppingBag } from 'react-icons/cg';
 
 const Bike = ({ bike }) => {
-  console.log(bike, 'price added')
   const popularBikeCat = bike.categories.find(
     (bike) => bike.name === 'popular'
   );
