@@ -4,14 +4,15 @@ import CartItem from "./CartItem";
 import { useShoppingCart } from "use-shopping-cart";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "./ui/sheet";
 import { ScrollArea } from "./ui/scroll-area";
+import CheckOutBtn from "./CheckOutBtn";
 
 const CartSidebar = () => {
   const { cartCount, cartDetails, shouldDisplayCart, handleCartClick, totalPrice, } = useShoppingCart();
   return (
-    <Sheet open={true} onOpenChange={() => handleCartClick()}>
+    <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle className='text-left mb-12'>
+          <SheetTitle className='text-left mb-8'>
             My Shopping Cart({cartCount})</SheetTitle>
         </SheetHeader>
         <>
@@ -28,6 +29,14 @@ const CartSidebar = () => {
           </ScrollArea>
         )}
         </>
+        {cartCount > 0 && (
+        <div className="">
+          <div className="flex justify-between font-semibold">
+            <div className="uppercase mb-5">Total</div>
+            <div>${totalPrice}</div>
+          </div>
+          <CheckOutBtn />
+          </div>)}
       </SheetContent>
     </Sheet>
   )

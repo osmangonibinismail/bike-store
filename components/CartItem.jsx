@@ -13,7 +13,7 @@ const CartItem = ({ item }) => {
         {/* name, price, quantity, remove */}
         <div className="w-full max-w-[180px] flex flex-col justify-center gap-4">
             <div className="flex items-center justify-between">
-                <h5>{item.price}</h5>
+                <h5>{item.name}</h5>
                 <button onClick={() => removeItem(item.id)}>
                     <FaX className="text-sm " />
                 </button>
